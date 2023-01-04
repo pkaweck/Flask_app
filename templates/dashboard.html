@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>Make A Short URL</title>
+</head>
+
+<!-- sssssssssssssss-->
+<body style="font-family:arial, sans-serif; background:#ecedf0">
+    <style>.container {
+        width: 1500px;
+        height: 500px;
+        } 
+    </style>
+    <h1 style="background:#ADB9D3;padding:1px; font-size: 340%; ">
+       <center><p>Performance survey Dashboard</p></center>
+    </h1>
+    <right><div>{{prediction}}</div></right>
+    <div id="chart1" class="container"></div>
+    <div id="chart2" class="container"></div>
+    <h6><a href="/main">Return to form</a></h6>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs2 = {{graphJSON2|safe}};
+    Plotly.plot('chart2',graphs2,{});            
+</script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs1 = {{graphJSON1|safe}};
+    Plotly.plot('chart1',graphs1,{});           
+</script>
+</html>

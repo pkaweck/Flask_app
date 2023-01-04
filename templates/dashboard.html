@@ -7,27 +7,52 @@
 
 <!-- sssssssssssssss-->
 <body style="font-family:arial, sans-serif; background:#ecedf0">
-    <style>.container {
-        width: 1500px;
-        height: 500px;
-        } 
+    <style>
+    .container {
+        border: 1px solid black
+                    }
+            .chart_container1 {
+                float: left;
+                margin: 1%;
+                width: 47%;
+                border: 1px solid black
+            }
+            .chart_container2 {
+                float: right;
+                width: 47%;
+                margin: 1%;
+                border: 1px solid black
+            }
     </style>
-    <h1 style="background:#ADB9D3;padding:1px; font-size: 340%; ">
+    <h1 style="background:#ADB9D3;padding:1px; font-size: 250%; ">
        <center><p>Performance survey Dashboard</p></center>
     </h1>
-    <right><div>{{prediction}}</div></right>
-    <div id="chart1" class="container"></div>
-    <div id="chart2" class="container"></div>
-    <h6><a href="/main">Return to form</a></h6>
+    <center><div style="float:center; font-size: 200%">Your performance class is: {{prediction}}</div></center>
+    <div class = "container">
+        <div id="chart1" class="chart_container1"></div>
+        <div id="chart2" class="chart_container2"></div>
+        <div id="chart3" class="chart_container1"></div>
+        <div id="chart4" class="chart_container2"></div>
+        <div style ="clear:both">
+            <h6><a href="/main">Return to form</a></h6>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script type="text/javascript">
     var graphs2 = {{graphJSON2|safe}};
     Plotly.plot('chart2',graphs2,{});            
 </script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script type="text/javascript">
     var graphs1 = {{graphJSON1|safe}};
-    Plotly.plot('chart1',graphs1,{});           
+    Plotly.plot('chart1',graphs1,{});         
+</script>
+<script type="text/javascript">
+    var graphs3 = {{graphJSON3|safe}};
+    Plotly.plot('chart3',graphs3,{});         
+</script>
+<script type="text/javascript">
+    var graphs4 = {{graphJSON4|safe}};
+    Plotly.plot('chart4',graphs4,{});         
 </script>
 </html>

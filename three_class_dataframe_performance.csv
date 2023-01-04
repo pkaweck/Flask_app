@@ -1,4 +1,4 @@
-age,gender,BMI,body fat_%,diastolic,systolic,gripForce,sit-ups counts,broad jump_cm,class
+age,gender,bmi,body_fat_perc,diastolic,systolic,grip_force,sit_ups,broad_jump_cm,class
 25,0,20.49586777,15.7,77,126,36.4,53,229,A
 42,1,23.54006338,32.2,72,135,22.7,18,146,C
 42,0,22.84425666,19.3,63,110,43.5,68,211,A

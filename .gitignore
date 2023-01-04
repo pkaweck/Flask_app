@@ -1,2 +1,8 @@
-/Pudzilla.png
+Pudzilla.png
 /venv
+/.idea
+Jupyter_plotly.ipynb
+model.pkl
+Dashboard_plots.py
+three_class_dataframe_performance.csv
+CART,KNN.ipynb

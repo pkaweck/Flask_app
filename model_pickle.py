@@ -2,9 +2,9 @@
 
 from pandas import read_csv
 import pickle
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
+from scikit-learn.model_selection import train_test_split
+from scikit-learn.ensemble import RandomForestClassifier
+from scikit-learn import metrics
 
 df = read_csv('three_class_dataframe_performance.csv')
 

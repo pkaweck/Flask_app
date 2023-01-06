@@ -11,7 +11,7 @@
 
 # **Diagram architektury procesu**
 
-<img src="App Diagram.png">
+<img src="App_Diagram.png">
 
 
 

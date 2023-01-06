@@ -211,7 +211,7 @@ sql_query = pd.read_sql_query ('''
 
 4. Wprowadzanie nowych danych do bazy Azure SQL przy pomocy pipeline'a w Azure Logic Apps
 
-<img src="logic-apps-process.png">
+<img src="logic-apps-process.PNG">
 
 
 Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
@@ -229,11 +229,11 @@ Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
         "class": "T2"
 }
 ```
-<img src="logic-apps-process-testing.png">
+<img src="logic-apps-process-testing.PNG">
 
 Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z request w trzecim rzędzie tabeli:
 
-<img src="results_sql.png">
+<img src="results_sql.PNG">
 
 
 ----------------------------------------

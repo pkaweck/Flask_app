@@ -18,8 +18,8 @@ def ValuePredictor(to_predict_list):
     return prediction
 
 
-PASSWORD='mlxyz123!!!'
-LOGIN='MLLogin'
+PASSWORD='PASSWORD'
+LOGIN='Login'
 
 
 #connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryMsi" #authentication=ActiveDirectoryIntegrated

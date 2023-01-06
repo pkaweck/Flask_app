@@ -23,7 +23,7 @@ LOGIN='Login'
 
 
 #connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryMsi" #authentication=ActiveDirectoryIntegrated
-connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Uid={LOGIN};Pwd={PASSWORD};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+connection_string = f"Driver={{ODBC Driver 17 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Uid={LOGIN};Pwd={PASSWORD};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 cnxn = pyodbc.connect(connection_string)
 #cursor = cnxn.cursor()
 

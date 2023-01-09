@@ -219,7 +219,7 @@ Na potrzeby wizualizacji, odpytywana jest baza danych przy pomocy języka SQL.
 ![logic pipeline](https://github.com/pkaweck/Flask_app/blob/master/images/logic-apps-process.PNG?raw=true "Logic Apps pipeline")
 
 
-Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
+Przykładowy request HTTP metodą POST wysyłany na adres pipeline'a Logic Apps:
 ```json
 {
         "age": 30,
@@ -245,12 +245,13 @@ Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z reque
 ### **Uruchomienie webowe**
 
 1. Wdrożenie aplikacji na środowisko wirtualne Azure App Services i wejście na stronę przy użyciu wygenerowanej domeny:
-## **<span style="color:Red"> LINK DO STRONY </span>**
+https://se-performance-app-v2.azurewebsites.net/
 
 2. Wprowadzenie danych testowych (a) i zatwierdzenie formularza w celu sprawdzenia przekierowania i działania dashboardu (b):
 
-    a) 
+  **a)** 
 
-    b)
-
+![live app form](https://github.com/pkaweck/Flask_app/blob/master/images/live_app_form.PNG?raw=true "Aplikacja webowa ankieta")
+  **b)**
+![live app dashboard](https://github.com/pkaweck/Flask_app/blob/master/images/live_app_dashboard.PNG?raw=true "Aplikacja webowa dashboard")
 

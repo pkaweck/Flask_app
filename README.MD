@@ -13,7 +13,13 @@
 
 ![app diagram](https://github.com/pkaweck/Flask_app/blob/master/images/App_Diagram.png?raw=true "Diagram technologiczny aplikacji")
 
-
+    1. Użytkonik wchodzi w interakcję z interfejsem
+    2. Wyniki wysyłane są do aplikacje w Azure App Services, gdzie wykonywana jest predykcja
+    3a. Wyniki predykcji inicjują pobranie danych z bazy w celu stworzenia wizualizacji
+    3b. Użytkownik zostaje przekierowany na stronę dashboardu
+    4. Dane wprowadzone przez użytkownika zostają spakowane do JSONa wysłane poprzez HTTP request POST do pipeline'u Azure Logic Apps
+    5. Dane zostają rozpakowane z obiektu JSON i wprowadzone do odpowiedniej tabeli w bazie danych
+    6. Zależnie od potrzeby manualnie jest wykonywane przyuczenie modelu machine learningowego na nowych danych
 
 
 # **Specyfikacja wymagań**

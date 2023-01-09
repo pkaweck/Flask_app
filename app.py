@@ -64,7 +64,8 @@ def results():
     sub_fig1 = px.bar(sql_query,x='bmi',y='count', color='class')
     sub_fig1.update_traces(opacity = 0.75)
     sub_fig1.update_layout(barmode='overlay')
-    sub_fig1.add_vline(x=to_predict_dict["bmi"], line_dash = 'dash', line_color = 'firebrick')
+    sub_fig1.add_vline(x=to_predict_dict["bmi"], line_dash = 'dash', line_color = 'firebrick',
+    labels={'count':'Count','bmi': 'BMI (dashed line is your score)'})
     #sub_fig1 = px.histogram(sql_query, x= 'bmi', color = 'class')
     # ,xbins=dict( 
     #     start=15.0,
@@ -82,15 +83,17 @@ def results():
 # WYKRES 2
     # SELECT
     sub_fig2 = px.scatter(sql_query, x="sit_ups", y="broad_jump_cm", color="class", marginal_y="violin",
-           marginal_x="box", trendline="ols", template="simple_white")
+           marginal_x="box", trendline="ols", template="simple_white", 
+           labels={'sit_ups':'Sit ups count','broad_jump_cm': 'Broad jump distance in centimeters'})
 
 # WYKRES 3
     df_2 = pd.DataFrame({'count' : sql_query.groupby('class')['body_fat'].mean()}).reset_index() 
-    sub_fig3 = px.bar(df_2, x = 'class', y = 'count', color = 'class')
+    sub_fig3 = px.bar(df_2, x = 'class', y = 'count', color = 'class', labels={'count':'Average body fat'})
 
 # WYKRES 4
     # SELECT 
-    sub_fig4 = px.scatter(sql_query, x="grip_force", y="sit_ups", color="class",size='grip_force', hover_data=['grip_force'])
+    sub_fig4 = px.scatter(sql_query, x="grip_force", y="sit_ups", color="class",size='grip_force', hover_data=['grip_force']
+        labels={'grip_force':'Grip Force (position + size)','sit_ups':'Sit ups count'})
 
 
     graphJSON1 = json.dumps(sub_fig1, cls=plotly.utils.PlotlyJSONEncoder)

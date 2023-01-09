@@ -11,7 +11,7 @@
 
 # **Diagram architektury procesu**
 
-<img src="App_Diagram.png">
+![app diagram](/images/App_Diagram.png?raw=true "Diagram technologiczny aplikacji")
 
 
 
@@ -155,10 +155,9 @@ class (A-najlepsza, B-przeciętna, C-najgorsza) - Klasa oceny sprawności fizycz
     def index():
         return render_template('FLASK.html')
 ```
+Dekator app wykorzystywany jest do określenia ścieżki na stronie i tego co jest wynikiem takiej akcji/funkcji. Jest to podstawowa klasa obiektów we Flask dla których określa się metody i funkcje, które powoduje wywołanie strony.
 
-## **<span style="color:Red"> DODAĆ OPIS </span>**
-@app.route jest dekoratorem 
-<img src="ankieta_screen.png">
+![ankieta](/images/ankieta_screen.png?raw=true "Ankieta")
 
 
 2. Wprowadzenie danych użytkownika i zatwierdzenie danych formularza wraz z przejściem przy pomocy przycisku "SUBMIT"
@@ -190,7 +189,7 @@ class (A-najlepsza, B-przeciętna, C-najgorsza) - Klasa oceny sprawności fizycz
 </html>
 ```
 
-## **<span style="color:Red"> DODAĆ OPIS </span>**
+Wyświetlana zawartość strony określona jest w języku HTML opartym na tagach. Tagi wyznaczają początek i koniec obiektów lub wspólnie określonych parametrów obiektów. Powyższy kod zawiera nagłówek strony, tag zawierający parametry dla wyszczególnionych obiektów oraz obiekt formularza, którego zatwierdzenie przyciskiem wywołuje przejście na inną stronę.
 
 3. Odpytywanie bazy danych Azure SQL - pozyskiwanie danych do wykresów na dashboardzie użytkownika.
 ```python
@@ -205,13 +204,13 @@ sql_query = pd.read_sql_query ('''
         ,cnxn)
 ```
 
-###WYKRESY NA DRUGIEJ STRONIE - SCREENSHOT 
-## **<span style="color:Red"> DODAĆ OPIS </span>**
+![dashboard](/images/Dashboard.png?raw=true "Dashboard")
 
+Na potrzeby wizualizacji, odpytywana jest baza danych przy pomocy języka SQL.
 
 4. Wprowadzanie nowych danych do bazy Azure SQL przy pomocy pipeline'a w Azure Logic Apps
 
-<img src="logic-apps-process.PNG">
+![logic pipeline](/images/logic-apps-process.PNG?raw=true "Logic Apps pipeline")
 
 
 Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
@@ -229,11 +228,10 @@ Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
         "class": "T2"
 }
 ```
-<img src="logic-apps-process-testing.PNG">
-
+![logic pipeline test](/images/logic-apps-process-testing.PNG?raw=true "Logic Apps testing")
 Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z request w trzecim rzędzie tabeli:
 
-<img src="results_sql.PNG">
+![sql results](/images/results_sql.PNG?raw=true "Wyniki SQL")
 
 
 ----------------------------------------
@@ -249,22 +247,3 @@ Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z reque
     b)
 
 
-
-------------------------
-
-b.	Sprawozdanie z wykonania scenariuszy testów
-Całe oprogramowanie ma się składać z kodu i testu. 
-Wziąć perspektywę naszego odbiorcy i z nim ustalić co jest widoczne i przydatne itd.
-Nie oczekuje diagramów klas itd. Ważne by kod był samowyjaśniający.
-
-
-Kryteria oceny:
-Jakość przygotowanej dokumentacji oceniana jest:
-A)	Doskonałość redakcyjna – poprawność językowa, kolorystyka, styl i wielkość czcionej odpowiadająca przekaywaym treściom, wizualne odzwierciedlenia fragmentów dokumentów, jak np. sekcje, rozdział podrozdziały, akapity
-B)	Przejrzystość
-a.	Struktura dokumentacji jest do uchwycenia poprzez wzrokową identyfikację poszczególnych elementów, nawigacja staje się wówczas uproszczona
-b.	Wykorzystywana terminologia jest jednoznaczna, precyzyjna i prosta w odbiorze, intensywne wykorzystanie odnośników w materiałach 
-c.	Spójność – wszystkie elementy dokumentacji tworzą jedną całość np. numeracja specyfikacja wymagań musi bezpośrednio odnosić się do scenariusza testów poprzez jasno określone identyfikatory i precyzyjne nazwy 
-Kod ma być czytelny i prosty. Opisać każdą metodę i klasę by wyjaśnić prostym językiem, ale nie oczywistym. Znaleźć balans co jest warte wyjaśnienia, co jest oczywiste itd.
-
-Testy w dokumentacji przedstawić jako co jest do zrealizowania. Zidentyfikowanie cech zbioru, liczba obserwacji, liczba kolumn, przeprowadzenie testów danego zbioru, wskazanie zbioru wczytanie i potwierdzenie poprawności wczytania poprzez obserwacje danych czynników.  Załadowanie i ocena poprawności. Bez grafiki. 

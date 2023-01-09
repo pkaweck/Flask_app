@@ -11,7 +11,7 @@
 
 # **Diagram architektury procesu**
 
-![app diagram](/images/App_Diagram.png?raw=true "Diagram technologiczny aplikacji")
+![app diagram](https://github.com/pkaweck/Flask_app/tree/master/images/App_Diagram.png?raw=true "Diagram technologiczny aplikacji")
 
 
 
@@ -157,7 +157,7 @@ class (A-najlepsza, B-przeciętna, C-najgorsza) - Klasa oceny sprawności fizycz
 ```
 Dekator app wykorzystywany jest do określenia ścieżki na stronie i tego co jest wynikiem takiej akcji/funkcji. Jest to podstawowa klasa obiektów we Flask dla których określa się metody i funkcje, które powoduje wywołanie strony.
 
-![ankieta](/images/ankieta_screen.png?raw=true "Ankieta")
+![ankieta](https://github.com/pkaweck/Flask_app/tree/master/images/ankieta_screen.png?raw=true "Ankieta")
 
 
 2. Wprowadzenie danych użytkownika i zatwierdzenie danych formularza wraz z przejściem przy pomocy przycisku "SUBMIT"
@@ -204,13 +204,13 @@ sql_query = pd.read_sql_query ('''
         ,cnxn)
 ```
 
-![dashboard](/images/Dashboard.png?raw=true "Dashboard")
+![dashboard](https://github.com/pkaweck/Flask_app/tree/master/images/Dashboard.png?raw=true "Dashboard")
 
 Na potrzeby wizualizacji, odpytywana jest baza danych przy pomocy języka SQL.
 
 4. Wprowadzanie nowych danych do bazy Azure SQL przy pomocy pipeline'a w Azure Logic Apps
 
-![logic pipeline](/images/logic-apps-process.PNG?raw=true "Logic Apps pipeline")
+![logic pipeline](https://github.com/pkaweck/Flask_app/tree/master/images/logic-apps-process.PNG?raw=true "Logic Apps pipeline")
 
 
 Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
@@ -228,10 +228,10 @@ Przykładowy request HTTP metodą POST wysyłany na adres pipelin'a Logic Apps:
         "class": "T2"
 }
 ```
-![logic pipeline test](/images/logic-apps-process-testing.PNG?raw=true "Logic Apps testing")
+![logic pipeline test](https://github.com/pkaweck/Flask_app/tree/master/images/logic-apps-process-testing.PNG?raw=true "Logic Apps testing")
 Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z request w trzecim rzędzie tabeli:
 
-![sql results](/images/results_sql.PNG?raw=true "Wyniki SQL")
+![sql results](https://github.com/pkaweck/Flask_app/tree/master/images/results_sql.PNG?raw=true "Wyniki SQL")
 
 
 ----------------------------------------

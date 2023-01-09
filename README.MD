@@ -236,7 +236,7 @@ Przykładowy request HTTP metodą POST wysyłany na adres pipeline'a Logic Apps:
 ```
 ![logic pipeline test](https://github.com/pkaweck/Flask_app/blob/master/images/logic-apps-process-testing.PNG?raw=true "Logic Apps testing")
 
-Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z requesta w trzecim rzędzie tabeli:
+Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z requesta w drugim rzędzie tabeli:
 
 ![sql results](https://github.com/pkaweck/Flask_app/blob/master/images/sql_results.PNG?raw=true "Wyniki SQL")
 
@@ -249,9 +249,10 @@ https://se-performance-app-v2.azurewebsites.net/
 
 2. Wprowadzenie danych testowych (a) i zatwierdzenie formularza w celu sprawdzenia przekierowania i działania dashboardu (b):
 
-  **a)** 
+ ## **a)** 
 
 ![live app form](https://github.com/pkaweck/Flask_app/blob/master/images/live_app_form.PNG?raw=true "Aplikacja webowa ankieta")
-  **b)**
+
+ ## **b)**
 ![live app dashboard](https://github.com/pkaweck/Flask_app/blob/master/images/live_app_dashboard.PNG?raw=true "Aplikacja webowa dashboard")
 

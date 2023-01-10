@@ -19,7 +19,7 @@ def ValuePredictor(to_predict_list):
 
 
 PASSWORD='PASSWORD'
-LOGIN='Login'
+LOGIN='LOGIN'
 
 
 #connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryMsi" #authentication=ActiveDirectoryIntegrated
@@ -27,8 +27,6 @@ connection_string = f"Driver={{ODBC Driver 17 for SQL Server}};Server=tcp:projec
 cnxn = pyodbc.connect(connection_string)
 #cursor = cnxn.cursor()
 
-df = pd.read_csv("C:/Users/Paweł/PycharmProjects/Flask_app/three_class_dataframe_performance.csv")
-df_2 = pd.DataFrame({'count' : df.groupby('class')['body_fat_perc'].mean()}).reset_index() 
 
 app = Flask(__name__)
 
@@ -44,11 +42,11 @@ def results():
         to_predict_list = list(map(int, to_predict_list))
         prediction = ValuePredictor(to_predict_list)
     
-        for keys in to_predict_dict:
-            to_predict_dict[keys] = float(to_predict_dict[keys])
-        to_predict_dict["class"] = prediction[0]
-        html_logics ='https://prod-225.westeurope.logic.azure.com:443/workflows/55ab791140d24da8ac50e8b954781586/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vr_1CSTIeN0Aqf_5A7x9FwJaxWncXJOQJYYrWWg6K1Q'
-        requests.post(html_logics,json=to_predict_dict)
+       # for keys in to_predict_dict:
+        #    to_predict_dict[keys] = float(to_predict_dict[keys])
+       # to_predict_dict["class"] = prediction[0]
+       # html_logics ='https://prod-225.westeurope.logic.azure.com:443/workflows/55ab791140d24da8ac50e8b954781586/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vr_1CSTIeN0Aqf_5A7x9FwJaxWncXJOQJYYrWWg6K1Q'
+       # requests.post(html_logics,json=to_predict_dict)
 
 
  # WYKRES 1
@@ -61,11 +59,10 @@ def results():
         order by class asc, lower_limit asc
         '''
         ,cnxn)
-    sub_fig1 = px.bar(sql_query,x='bmi',y='count', color='class')
+    sub_fig1 = px.bar(sql_query,x='bmi',y='count', color='class', labels={'count':'Count','bmi': 'BMI (dashed line is your score)'})
     sub_fig1.update_traces(opacity = 0.75)
     sub_fig1.update_layout(barmode='overlay')
-    sub_fig1.add_vline(x=to_predict_dict["bmi"], line_dash = 'dash', line_color = 'firebrick',
-    labels={'count':'Count','bmi': 'BMI (dashed line is your score)'})
+    sub_fig1.add_vline(x=to_predict_dict["bmi"], line_dash = 'dash', line_color = 'firebrick')
     #sub_fig1 = px.histogram(sql_query, x= 'bmi', color = 'class')
     # ,xbins=dict( 
     #     start=15.0,
@@ -93,7 +90,7 @@ def results():
 # WYKRES 4
     # SELECT 
     sub_fig4 = px.scatter(sql_query, x="grip_force", y="sit_ups", color="class",size='grip_force', hover_data=['grip_force']
-        labels={'grip_force':'Grip Force (position + size)','sit_ups':'Sit ups count'})
+        ,labels={'grip_force':'Grip Force (position + size)','sit_ups':'Sit ups count'})
 
 
     graphJSON1 = json.dumps(sub_fig1, cls=plotly.utils.PlotlyJSONEncoder)

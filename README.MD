@@ -25,7 +25,7 @@
 # **Specyfikacja wymagań**
 
 
-1.  Formularz [Prorytet 1 - Frontend] - służący do interakcji z użytkownikiem wchodzącym na stronę. Formularz wypełniany jest danymi użytkownika odnoszących się do osiągnięć fizycznych. 
+1.  Formularz [Priorytet 1 - Frontend] - służący do interakcji z użytkownikiem wchodzącym na stronę. Formularz wypełniany jest danymi użytkownika odnoszących się do osiągnięć fizycznych. 
 2.  Model uczenia maszynowego [Priorytet 1 - Backend] - służy predykcji przypisania wyników użytkownika do danej klasy fizycznej.
 3.  Baza danych [Priorytet 1 - Backend] - Azure SQL DB do przechowywania wyników wprowadzonych przez użytkowników.
 4.  Dashboard [Priorytet 1 - Frontend] - wizualne przedstawienie danych użytkownika w porównaniu do pozostałej puli wyników.

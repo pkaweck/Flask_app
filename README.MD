@@ -182,13 +182,14 @@ Dekator app wykorzystywany jest do określenia ścieżki na stronie i tego co je
        <p>Performance survey</p>
     </h1>
 <style> label,input, select, option {font-size:150%; font-family: arial}</style>
-
+<h2 style="font-size: 80%">Hover over input field to get more information</h2>
 <form action="/results", method="POST">
     <label for="age">Age:</label>
     <input type="number" min = "18" max = "100" id = "age" name="age" value="" required>
     ...
-    <p> <label for="broad_jump_cm">Broad jump in centimeters</label>
-        <input type="number" name="broad_jump_cm" min = "0" max = 400 id ="broad_jump_cm" min = "0" max="" value="" required></p>
+   <p> <label for="broad_jump_cm">Broad jump in centimeters</label>
+        <input type="number" name="broad_jump_cm" min = "0" max = 400 id ="broad_jump_cm" title="Jump performed without runup - standing long jump" value="" required></p>
+        <!--<a href="results"></a>-->
         <input type="submit" value="Submit" style = "font-size:140%">
 </form> 
 </body>

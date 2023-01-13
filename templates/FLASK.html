@@ -10,46 +10,46 @@
     <h1 style="background:#EDF0F5;padding:1px; font-size: 340%">
        <p>Performance survey</p>
     </h1>
-<style> label,input, select, option {font-size:150%; font-family: arial}</style>
-
-<form action="/results", method="POST">
-    <label for="age">Age:</label>
-    <input type="number" min = "18" max = "100" id = "age" name="age" value="" required>
-
-    <p> <label for="gender">Gender:</label>
-
-    <select name="gender" id="gender" style="font-size:125%">
-      <option value="0">Male</option>
-      <option value="1">Female</option>
-        </select>
-
-    <p> <label for="bmi">BMI (10 - 45)</label>
-        <input type="number" min = "10" max="45" id = "bmi" name="bmi" value="" required></p>
-
-
-    <p> <label for="body_fat">Body fat percentage</label>
-        <input type="number" name="body_fat" min="5" max="70" id = "body_fat" value="" required></p>
-
-
-    <p> <label for="diastolic">Blood pressure - diastolic</label>
-        <input type="number" name="diastolic" min = 10 max = 150 id = "diastolic" value="" required></p>
-
-
-    <p> <label for="systolic">Blood pressure - systolic</label>
-        <input type="number" name="systolic" id="systolic" min="20" max="250" value="" required></p>
-
-
-    <p> <label for="grip_force">Grip force</label>
-        <input type="number" name="grip_force" min="1" max="100" id="grip_force" value="" required></p>
-
-    <p> <label for="sit_ups">Sit ups count</label>
-        <input type="number" name="sit_ups" min="0" max="100" id="sit_ups" value="" required></p>
-
-
-    <p> <label for="broad_jump_cm">Broad jump in centimeters</label>
-        <input type="number" name="broad_jump_cm" min = "0" max = 400 id ="broad_jump_cm" min = "0" max="" value="" required></p>
-        <!--<a href="results"></a>-->
-        <input type="submit" value="Submit" style = "font-size:140%">
+    <style> label,input, select, option {font-size:150%; font-family: arial}</style>
+    <h2 style="font-size: 80%">Hover over input field to get more information</h2>
+    <form action="/results", method="POST">
+        <label for="age">Age:</label>
+        <input type="number" min = "18" max = "100" id = "age" name="age" value="" required>
+    
+        <p> <label for="gender">Gender:</label>
+    
+        <select name="gender" id="gender" style="font-size:125%">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+            </select>
+    
+        <p> <label for="bmi">BMI (10 - 45)</label>
+            <input type="number" min = "10" max="45" id = "bmi" name="bmi" value="" required></p>
+    
+    
+        <p> <label for="body_fat">Body fat percentage</label>
+            <input type="number" name="body_fat" min="5" max="70" id = "body_fat" value="" required></p>
+    
+    
+        <p> <label for="diastolic">Blood pressure - diastolic</label>
+            <input type="number" name="diastolic" min = 10 max = 150 id = "diastolic" title="Resting diastolic blood pressure" value="" required></p>
+    
+    
+        <p> <label for="systolic">Blood pressure - systolic</label>
+            <input type="number" name="systolic" id="systolic" min="20" max="250" title="Resting systolic blood pressure" value="" required></p>
+    
+    
+        <p> <label for="grip_force">Grip force</label>
+            <input type="number" name="grip_force" min="1" max="100" id="grip_force" title="Score in pounds measured using special device" value="" required></p>
+    
+        <p> <label for="sit_ups">Sit ups count</label>
+            <input type="number" name="sit_ups" min="0" max="100" id="sit_ups" title="Max sit ups done without resting in 90 seconds" value="" required></p>
+    
+    
+        <p> <label for="broad_jump_cm">Broad jump in centimeters</label>
+            <input type="number" name="broad_jump_cm" min = "0" max = 400 id ="broad_jump_cm" title="Jump performed without runup - standing long jump" value="" required></p>
+            <!--<a href="results"></a>-->
+            <input type="submit" value="Submit" style = "font-size:140%">
 </form>
  <!---->
  

@@ -246,7 +246,7 @@ Wyniki odpytania bazy testowej przedstawiają poprawnie załadowane dane z reque
 ### **Uruchomienie webowe**
 
 1. Wdrożenie aplikacji na środowisko wirtualne Azure App Services i wejście na stronę przy użyciu wygenerowanej domeny:
-https://se-performance-app-v2.azurewebsites.net/
+https://se-performance-app-v3.azurewebsites.net/
 
 2. Wprowadzenie danych testowych (a) i zatwierdzenie formularza w celu sprawdzenia przekierowania i działania dashboardu (b):
 

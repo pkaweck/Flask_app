@@ -1,8 +1,8 @@
-# **PerformanceApp** - Aplikacja wspomagająca progres w wysiłku fizycznego
+# **PerformanceApp** - Aplikacja wspomagająca progres w wysiłku fizycznym
 
 
-    Aplikacja z interfejsem służy do pomiaru i nadzorowania aktualnego statusu zdrowotnego użytkownika. Do klasyfikacji nowych użytkowników użyty został model uczenia maszynowego, którego algorytm został przyuczony na ogólnodostępnym zbiorze 10 tysięcy badanych osób o różnej płci i wieku.
-    Głównym założeniem aplikacji było wsparcie progresu użytkowników w wysiłku fizycznym poprzez możliwość porównania swoich osiągnięć z innymi.
+Aplikacja z interfejsem służy do pomiaru i nadzorowania aktualnego statusu zdrowotnego użytkownika. Do klasyfikacji nowych użytkowników użyty został model uczenia maszynowego, którego algorytm został przyuczony na ogólnodostępnym zbiorze 10 tysięcy badanych osób o różnej płci i wieku.
+Głównym założeniem aplikacji było wsparcie progresu użytkowników w wysiłku fizycznym poprzez możliwość porównania swoich osiągnięć z innymi.
     
     Autorzy: Paweł Kawecki i Marcel Gęsicki
 

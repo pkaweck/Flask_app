@@ -1,3 +1,4 @@
+#Wymagane biblioteki
 from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
@@ -10,18 +11,18 @@ import pyodbc
 import requests
 #from dash.dependencies import Input, Output
 
-
+#Funkcja predykcji
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1, 9)
     loaded_model = pickle.load(open("model.pkl", "rb"))
     prediction = loaded_model.predict(to_predict)[0]
     return prediction
 
-
+#Zmienne do podłączenia z bazą danych
 PASSWORD='PASSWORD'
 LOGIN='LOGIN'
 
-
+#Baza danych
 #connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryMsi" #authentication=ActiveDirectoryIntegrated
 connection_string = f"Driver={{ODBC Driver 17 for SQL Server}};Server=tcp:project-se-server.database.windows.net,1433;Database=project-se-db;Uid={LOGIN};Pwd={PASSWORD};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 cnxn = pyodbc.connect(connection_string)
@@ -29,11 +30,11 @@ cnxn = pyodbc.connect(connection_string)
 
 
 app = Flask(__name__)
-
+#Wywołanie strony głównej
 @app.route('/', methods = ['POST', 'GET'])
 def index():
     return render_template('FLASK.html')
-
+#Wywołanie dashboardów
 @app.route('/results', methods = ['POST', 'GET'])
 def results():
     if request.method == 'POST':
@@ -41,12 +42,12 @@ def results():
         to_predict_list = list(to_predict_dict.values())
         to_predict_list = list(map(int, to_predict_list))
         prediction = ValuePredictor(to_predict_list)
-    
-       # for keys in to_predict_dict:
-        #    to_predict_dict[keys] = float(to_predict_dict[keys])
-       # to_predict_dict["class"] = prediction[0]
-       # html_logics ='https://prod-225.westeurope.logic.azure.com:443/workflows/55ab791140d24da8ac50e8b954781586/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vr_1CSTIeN0Aqf_5A7x9FwJaxWncXJOQJYYrWWg6K1Q'
-       # requests.post(html_logics,json=to_predict_dict)
+    #LogicApps
+        for keys in to_predict_dict:
+            to_predict_dict[keys] = float(to_predict_dict[keys])
+            to_predict_dict["class"] = prediction[0]
+            html_logics ='https://prod-225.westeurope.logic.azure.com:443/workflows/55ab791140d24da8ac50e8b954781586/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vr_1CSTIeN0Aqf_5A7x9FwJaxWncXJOQJYYrWWg6K1Q'
+            requests.post(html_logics,json=to_predict_dict)
 
 
  # WYKRES 1
@@ -92,7 +93,7 @@ def results():
     sub_fig4 = px.scatter(sql_query, x="grip_force", y="sit_ups", color="class",size='grip_force', hover_data=['grip_force']
         ,labels={'grip_force':'Grip Force (position + size)','sit_ups':'Sit ups count'})
 
-
+#Spakowanie obiektów do JSON 
     graphJSON1 = json.dumps(sub_fig1, cls=plotly.utils.PlotlyJSONEncoder)
     graphJSON2 = json.dumps(sub_fig2, cls=plotly.utils.PlotlyJSONEncoder)
     graphJSON3 = json.dumps(sub_fig3, cls=plotly.utils.PlotlyJSONEncoder)
